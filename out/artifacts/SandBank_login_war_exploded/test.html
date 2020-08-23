@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="https://kit.fontawesome.com/5d4f770a8b.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>div模仿下拉框</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .select-box{
+            width: 200px;
+            margin: 50px auto;
+            text-align: center;
+            text-indent: 5px;
+            font-family: Arial;
+            font-size: 15px;
+            color: #232323
+        }
+
+        .select-box .select-title{
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            cursor:pointer;
+        }
+        .select-box .select-title:hover{
+            background-color: #ebebeb;
+            transition-duration: 300ms;
+        }
+        .select-box ul{
+            border: 1px solid lightgray;
+            border-top: none;
+        }
+        .select-box ul li{
+            height: 30px;
+            line-height: 30px;
+            list-style: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            /*background-color: yellow;*/
+        }
+        .select-box ul li:hover{
+            background-color: #ebebeb;
+            transition-duration: 300ms;
+        }
+
+        .select-box ul li.current{
+            background: #ebebeb;
+        }
+        .select-box ul li:not(:last-of-type){
+            border-bottom: 1px solid #ccc;
+        }
+        .none{
+            display: none;
+        }
+        .block{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="select-box">
+    <span class="select-title"><i class="fas fa-list"></i>&nbsp;&nbsp;All categories</span><!-- 下拉标题 -->
+    <ul id="category" class="select-con none">
+        <li><i class="fas fa-list"></i>&nbsp;&nbsp;All categories</li>
+        <li><i class="fas fa-laptop-medical"></i>&nbsp;&nbsp;Electronics</li>
+        <li><i class="fas fa-hamburger"></i>&nbsp;&nbsp;Food</li>
+        <li><i class="fas fa-book"></i>&nbsp;&nbsp;Books</li>
+        <li><i class="fas fa-box-open"></i>&nbsp;&nbsp;Daily</li>
+    </ul>
+</div>
+
+
+
+<script src="jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).bind("click",function(e){
+        var clickMe=$(e.target);/*获取点击元素*/
+        if(!clickMe.hasClass("select-title")){/*点击元素不是下拉框标题时*/            　　　　　　　
+            $(".select-box ul").addClass("none").removeClass("block");            　　　　　　　　
+        if(clickMe.parent().hasClass("select-con")){/*点击元素是下拉选项时*/                　　　　　　　　　　
+            var currenLiHtml=clickMe.html();/*获取点击的下拉选项HTML*/                　　　　　　　　　　
+            clickMe.parent().siblings(".select-title").html(currenLiHtml);/*把点击的下拉选项HTML放到下拉标题*/                　　　　　　　　　　
+            clickMe.addClass("current").siblings().removeClass("current");/*给点击的下拉选项加背景色*/           　　　　　　　　}        　　　　　　
+        }else if(clickMe.siblings(".select-con").hasClass("none")){/*点击下拉标题时如果有none类的话*/       		　　　　　　　　
+            clickMe.parents("body").find(".select-con").addClass("none").removeClass("block");/*点击下拉标题时如果有none类的话,全部下拉关闭，然后在展开当前的下拉*/            　　　　　　　　
+            clickMe.siblings(".select-con").addClass("block").removeClass("none");                    　　　　　　　　
+        }else if(clickMe.siblings(".select-con").hasClass("block")){/*点击下拉标题时如果有block类下拉是展开的话*/            　　　　　　　　
+            $(".select-box ul").addClass("none").removeClass("block");        　　　　
+        }
+    })
+</script>
+</body>
+</html>
+</body>
+</html>

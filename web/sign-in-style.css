@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ebebeb;
+}
+.title{
+    position: relative;
+    margin:auto;
+    top:100px;
+    font-family: Arial;
+    font-size: 30px;
+    text-align: center;
+}
+
+.account-info{
+    position: relative;
+    width: 40%;
+    height: 400px;
+    background-color: white;
+    margin:auto;
+    top: 150px;
+}
+
+.form-group{
+    position: relative;
+    width: 40%;
+    margin-left: 40px;
+    top:40px;
+}
+
+.submit{
+    position: relative;
+    background-color: #00a600;
+    border: none;
+    margin-left: 150px;
+    top:50px;
+}
+
+.submit:hover{
+    background-color: darkgreen;
+}
+
+.register-word{
+    font-size: 12px;
+    position: relative;
+    top:70px;
+    margin-left: 90px;
+}
+
+.register-style{
+    text-decoration: underline;
+    color: #00a600;
+    cursor: pointer;
+}
+
+.register-info{
+    position: relative;
+    width: 40%;
+    height: 550px;
+    background-color: white;
+    margin:auto;
+    top: 150px;
+}

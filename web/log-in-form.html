@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SandBank: Free market in Liverpool</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="bootstrapFile/bootstrap.min.js"></script>
+    <link href="bootstrapFile/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
+    <link href="sign-in-style.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<div class="title">Sign in</div>
+<div class="account-info">
+
+    <form action="/SandBank_login/LoginServlet" method="post">
+        <div class="form-group">
+            <label >Username</label>
+            <input type="text" name="username" class="form-control" >
+            <small class="form-text text-muted">We'll never share your information with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <input type="submit" class="submit btn btn-primary" value="sign in">
+    </form>
+
+    <div class="register-word">Don't have an account? <a style="color: #00a600;" href="register-form.html">Register now</a></div>
+
+    <script>
+        function register() {
+            alert("hello");
+        }
+    </script>
+</div>
+</body>
+</html>
